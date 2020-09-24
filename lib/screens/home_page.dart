@@ -1,6 +1,7 @@
 import 'package:eog/components/submit_form.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_masked_text/flutter_masked_text.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 import '../components/my_logo.dart';
 import '../components/success_widget.dart';
@@ -16,7 +17,9 @@ class _HomePageState extends State<HomePage> {
   var ctrlEtanol = MoneyMaskedTextController();
   var busy = false;
   var completed = false;
-  var resultText = "";
+  Text resultText1;
+  Text resultText2;
+  Icon iconsResul;
 
   @override
   Widget build(BuildContext context) {
@@ -26,7 +29,11 @@ class _HomePageState extends State<HomePage> {
           Logo(),
           SizedBox(height: 50),
           completed
-              ? SuccessWidget(result: resultText, toClean: toCleanForm)
+              ? SuccessWidget(
+                  result1: resultText1,
+                  result2: resultText2,
+                  iconResult: iconsResul,
+                  toClean: toCleanForm)
               : SubmitForm(
                   gasCtrl: ctrlGas,
                   etaCtrl: ctrlEtanol,
@@ -62,9 +69,26 @@ class _HomePageState extends State<HomePage> {
         () => {
               setState(() {
                 if (resp >= 0.7) {
-                  resultText = "Utilize Gasoina!";
+                  resultText1 = Text(
+                    "Compensa utilizar",
+                    style:
+                        GoogleFonts.oswald(fontSize: 19, color: Colors.white),
+                  );
+                  resultText2 = Text(
+                    "Gasolina",
+                    style: GoogleFonts.oswald(fontSize: 22, color: Colors.red),
+                  );
                 } else {
-                  resultText = "Compensa Utilizar Etanol!";
+                  resultText1 = Text(
+                    "Compensa utilizar ",
+                    style:
+                        GoogleFonts.oswald(fontSize: 19, color: Colors.white),
+                  );
+                  resultText2 = Text(
+                    "Etanol",
+                    style:
+                        GoogleFonts.oswald(fontSize: 22, color: Colors.green),
+                  );
                 }
                 completed = true;
                 busy = false;

@@ -6,6 +6,7 @@ class Logo extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
+        SizedBox(height: 50),
         Icon(
           Icons.local_gas_station,
           color: Colors.amber,
