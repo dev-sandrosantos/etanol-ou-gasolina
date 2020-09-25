@@ -70,9 +70,9 @@ class _HomePageState extends State<HomePage> {
               setState(() {
                 if (resp >= 0.7) {
                   resultText1 = Text(
-                    "Compensa utilizar",
+                    "Compensa utilizar ",
                     style:
-                        GoogleFonts.oswald(fontSize: 19, color: Colors.white),
+                        GoogleFonts.oswald(fontSize: 22, color: Colors.white),
                   );
                   resultText2 = Text(
                     "Gasolina",
@@ -82,7 +82,7 @@ class _HomePageState extends State<HomePage> {
                   resultText1 = Text(
                     "Compensa utilizar ",
                     style:
-                        GoogleFonts.oswald(fontSize: 19, color: Colors.white),
+                        GoogleFonts.oswald(fontSize: 22, color: Colors.white),
                   );
                   resultText2 = Text(
                     "Etanol",

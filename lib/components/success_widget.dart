@@ -28,7 +28,7 @@ class SuccessWidget extends StatelessWidget {
         children: [
           SizedBox(height: 50),
           Row(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            mainAxisAlignment: MainAxisAlignment.center,
             mainAxisSize: MainAxisSize.max,
             children: [
               result1,
